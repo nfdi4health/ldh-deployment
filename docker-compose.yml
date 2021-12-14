@@ -18,10 +18,10 @@ services:
     command: docker/entrypoint.sh
     restart: always
     environment:
-      RAILS_ENV: production
-      SOLR_PORT: 8983
-      SOLR_HOST: solr
-      NO_ENTRYPOINT_WORKERS: 1
+      RAILS_ENV: "production"
+      SOLR_PORT: "8983"
+      SOLR_HOST: "solr"
+      NO_ENTRYPOINT_WORKERS: "1"
     env_file:
       - docker-compose.env
     volumes:
@@ -42,9 +42,9 @@ services:
     command: docker/start_workers.sh
     restart: always
     environment:
-      RAILS_ENV: production
-      SOLR_PORT: 8983
-      SOLR_HOST: seek-solr
+      RAILS_ENV: "production"
+      SOLR_PORT: "8983"
+      SOLR_HOST: "seek-solr"
     env_file:
       - docker-compose.env
     volumes:
@@ -62,7 +62,7 @@ services:
     container_name: n4h-lap-seek-solr
     restart: always
     environment:
-      SOLR_JAVA_MEM: -Xms512m -Xmx1024m
+      SOLR_JAVA_MEM: "-Xms512m -Xmx1024m"
     volumes:
       - seek-solr-data:/var/solr/
     entrypoint: ["docker-entrypoint.sh", "solr-precreate", "seek", "/opt/solr/server/solr/configsets/seek_config"]
