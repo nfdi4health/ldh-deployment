@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 
 services:
   seek-db:
@@ -22,6 +22,7 @@ services:
       SOLR_PORT: "8983"
       SOLR_HOST: "solr"
       NO_ENTRYPOINT_WORKERS: "1"
+      RAILS_RELATIVE_URL_ROOT: "/"
     env_file:
       - docker-compose.env
     volumes:
@@ -45,6 +46,7 @@ services:
       RAILS_ENV: "production"
       SOLR_PORT: "8983"
       SOLR_HOST: "seek-solr"
+      RAILS_RELATIVE_URL_ROOT: "/"
     env_file:
       - docker-compose.env
     volumes:

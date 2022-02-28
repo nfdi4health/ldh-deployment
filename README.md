@@ -16,8 +16,23 @@ Deployment instructions and resources for a NFDI4Health Local Access Point.
 For a first and simple glimpse of what an lap will look like follow the steps below.
 
 * Clone this repository
-* Use `docker-compose up -d` to startup the LAP
 
+```bash
+git clone https://github.com/knoppiks/n4h-lap-deployment.git
+cd n4h-lap-deployment
+```
+
+* Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
+
+```bash
+sed "s|<some-password>|$(openssl rand -base64 21)|" docker-compose.env.tpl > docker-compose.env
+```
+
+* Use compose to startup the LAP
+
+```
+docker compose up -d
+```
 
 [docker-install]: https://docs.docker.com/get-docker/
 [docker-ugroup]: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
