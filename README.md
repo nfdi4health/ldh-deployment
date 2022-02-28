@@ -9,6 +9,7 @@ Deployment instructions and resources for a NFDI4Health Local Access Point.
 * Docker must be installed on the system. Please follow the [official installation instructions][docker-install]
 * Also consider allowing your non-root Linux user to use docker by adding it to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
+* Login to GitHub Container Registry using your GitHub Account 
 
 ## Usage
 
