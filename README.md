@@ -25,7 +25,7 @@ cd n4h-lap-deployment
 * Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
 
 ```bash
-sed "s|<some-password>|$(openssl rand -base64 21)|" docker-compose.env.tpl > docker-compose.env
+sed "s|<db-password>|$(openssl rand -base64 21)|" docker-compose.env.tpl | sed "s|<root-password>|$(openssl rand -base64 21)|" > docker-compose.env
 ```
 
 * Use compose to startup the LAP

@@ -2,14 +2,15 @@ version: '3.1'
 
 services:
   seek-db:
-    image: postgres:11
+    image: mysql:5.7
     container_name: n4h-lap-seek-db
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     stop_grace_period: 1m30s
     env_file:
       - docker-compose.env
     volumes:
-      - seek-db:/var/lib/postgresql/data
+      - seek-db:/var/lib/mysql
 
   seek:
     image: ghcr.io/knoppiks/n4h-lap-seek:latest

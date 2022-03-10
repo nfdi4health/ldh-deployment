@@ -1,4 +1,7 @@
-POSTGRES_HOST=seek-db
-POSTGRES_DB=seek
-POSTGRES_USER=seek_db_user
-POSTGRES_PASSWORD=<some-password>
+MYSQL_HOST=n4h-lap-seek-db
+MYSQL_ROOT_PASSWORD=<root-password>
+MYSQL_DATABASE=n4h_lap_seek
+MYSQL_USER=n4h-lap-seek
+MYSQL_PASSWORD=<db-password>
+
+RAILS_RELATIVE_URL_ROOT=/
