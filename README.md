@@ -29,8 +29,8 @@ For a first and simple glimpse of what an lap will look like follow the steps be
 * Clone this repository
 
 ```bash
-git clone https://github.com/knoppiks/n4h-lap-deployment.git
-cd n4h-lap-deployment
+git clone https://github.com/nfdi4health/lap-deployment.git
+cd lap-deployment
 ```
 
 * Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
