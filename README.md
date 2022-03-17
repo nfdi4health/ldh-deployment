@@ -5,11 +5,11 @@ Deployment instructions and resources for an NFDI4Health Local Access Point.
 
 ## Disclaimer
 
-This project it's components are subject to heavy development and are therefor considered *[alpha][wiki-alpha]*. 
+This project and it's components are subject to heavy development and are therefor considered *[alpha][wiki-alpha]*. 
 Don't use this deployment method for production purposes **yet** as you might be force to do a fresh installation in 
 the future which might result in the loss of uploaded data. If you however want to try and participate in the 
 development of the software you are hereby highly encouraged to do so. Feel free to create bug reports and suggestions 
-in the [issue tracker][project-issues].   
+in the [issue tracker][project-issues]. 
 
 
 ## Prerequisites
