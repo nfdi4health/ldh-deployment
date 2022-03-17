@@ -3,7 +3,7 @@ version: '3.1'
 services:
   seek-db:
     image: mysql:5.7
-    container_name: n4h-lap-seek-db
+    container_name: nfdi4health-lap-seek-db
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     stop_grace_period: 1m30s
@@ -15,7 +15,7 @@ services:
   seek:
     image: ghcr.io/nfdi4health/seek:latest
 
-    container_name: n4h-lap-seek
+    container_name: nfdi4health-lap-seek
     command: docker/entrypoint.sh
     restart: always
     environment:
@@ -41,7 +41,7 @@ services:
   seek-workers:
     image: ghcr.io/nfdi4health/seek:latest
 
-    container_name: n4h-lap-seek-workers
+    container_name: nfdi4health-lap-seek-workers
     command: docker/start_workers.sh
     restart: always
     environment:
@@ -63,7 +63,7 @@ services:
 
   seek-solr:
     image: fairdom/seek-solr:8.11
-    container_name: n4h-lap-seek-solr
+    container_name: nfdi4health-lap-seek-solr
     restart: always
     environment:
       SOLR_JAVA_MEM: "-Xms512m -Xmx1024m"
