@@ -19,7 +19,6 @@ in the [issue tracker][project-issues].
 * Docker must be installed on the system. Please follow the [official installation instructions][docker-install]
 * Also consider allowing your non-root Linux user to use docker by adding it to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
-* Login to GitHub Container Registry [using your GitHub Account][ghcr-auth] 
 
 
 ## Usage
@@ -52,4 +51,3 @@ docker compose up -d
 [project-issues]: https://github.com/nfdi4health/lap-deployment/issues
 [docker-install]: https://docs.docker.com/get-docker/
 [docker-ugroup]: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
-[ghcr-auth]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry
