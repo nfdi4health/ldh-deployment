@@ -13,7 +13,7 @@ services:
       - seek-db:/var/lib/mysql
 
   seek:
-    image: ghcr.io/nfdi4health/seek:latest
+    image: ghcr.io/nfdi4health/seek:lap
 
     container_name: nfdi4health-lap-seek
     command: docker/entrypoint.sh
@@ -39,7 +39,7 @@ services:
       - seek-solr
 
   seek-workers:
-    image: ghcr.io/nfdi4health/seek:latest
+    image: ghcr.io/nfdi4health/seek:lap
 
     container_name: nfdi4health-lap-seek-workers
     command: docker/start_workers.sh
