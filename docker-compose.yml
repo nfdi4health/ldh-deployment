@@ -21,7 +21,7 @@ services:
     environment:
       RAILS_ENV: "production"
       SOLR_PORT: "8983"
-      SOLR_HOST: "solr"
+      SOLR_HOST: "seek-solr"
       NO_ENTRYPOINT_WORKERS: "1"
       RAILS_RELATIVE_URL_ROOT: "/"
     env_file:
