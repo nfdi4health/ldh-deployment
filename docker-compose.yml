@@ -13,7 +13,7 @@ services:
       - seek-db:/var/lib/mysql
 
   seek:
-    image: ghcr.io/nfdi4health/seek:lap
+    image: ghcr.io/nfdi4health/ldh
 
     container_name: nfdi4health-lap-seek
     command: docker/entrypoint.sh
