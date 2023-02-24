@@ -1,6 +1,6 @@
-# NFDI4Health LAP Deployment
+# NFDI4Health LDH Deployment
 
-Deployment instructions and resources for an NFDI4Health Local Access Point.
+Deployment instructions and resources for an NFDI4Health Local Data Hup.
 
 
 ## Disclaimer
@@ -23,13 +23,13 @@ in the [issue tracker][project-issues].
 
 ## Usage
 
-For a first and simple glimpse of what an lap will look like follow the steps below.
+For a first and simple glimpse of what an ldh will look like follow the steps below.
 
 * Clone this repository
 
 ```bash
-git clone https://github.com/nfdi4health/lap-deployment.git
-cd lap-deployment
+git clone https://github.com/nfdi4health/ldh-deployment.git
+cd ldh-deployment
 ```
 
 * Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
@@ -41,13 +41,13 @@ cat docker-compose.env.tpl \
   > docker-compose.env
 ```
 
-* Use compose to startup the LAP
+* Use compose to startup the LDH
 
 ```
 docker compose up -d
 ```
 
 [wiki-alpha]: https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha
-[project-issues]: https://github.com/nfdi4health/lap-deployment/issues
+[project-issues]: https://github.com/nfdi4health/ldh-deployment/issues
 [docker-install]: https://docs.docker.com/get-docker/
 [docker-ugroup]: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
