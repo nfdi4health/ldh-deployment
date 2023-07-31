@@ -1,14 +1,14 @@
 # NFDI4Health LDH Deployment
 
-Deployment instructions and resources for an NFDI4Health Local Data Hup.
+Deployment instructions and resources for an NFDI4Health Local Data Hub.
 
 
 ## Disclaimer
 
-This project and it's components are subject to heavy development and are therefor considered *[alpha][wiki-alpha]*. 
-Don't use this deployment method for production purposes **yet** as you might be force to do a fresh installation in 
-the future which might result in the loss of uploaded data. If you however want to try and participate in the 
-development of the software you are hereby highly encouraged to do so. Feel free to create bug reports and suggestions 
+This project and it's components are subject to heavy development and are therefore considered *[alpha][wiki-alpha]*. 
+Do not use this deployment method for production purposes **yet**, as you may be forced to reinstall at some point in the future. 
+which may result in the loss of uploaded data. However, if you wish to participate in the development of the 
+development of the software, you are strongly encouraged to do so. Feel free to submit bug reports and suggestions 
 in the [issue tracker][project-issues]. 
 
 
@@ -23,7 +23,7 @@ in the [issue tracker][project-issues].
 
 ## Usage
 
-For a first and simple glimpse of what an ldh will look like follow the steps below.
+For a first and simple glimpse of what an LDH will look like follow the steps below.
 
 * Clone this repository
 
