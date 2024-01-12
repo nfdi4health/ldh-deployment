@@ -29,30 +29,49 @@ For a first and simple glimpse of what an LDH will look like follow the steps be
 ```bash
 git clone https://github.com/nfdi4health/ldh-deployment.git
 cd ldh-deployment
+
 ```
 
 * Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
-
+  
+E.g. generate good password with openssl:
 ```bash
 cat docker-compose.env.tpl \
   | sed "s|<db-password>|$(openssl rand -base64 21)|" \
   | sed "s|<root-password>|$(openssl rand -base64 21)|" \
   > docker-compose.env
+
 ```
 
 * Create Volumes
+
+Create external volumes
 ```bash
 docker volume create seek-filestore
 docker volume create seek-cache
 docker volume create seek-db
 docker volume create seek-solr-data
+
 ```
 
 * Use compose to startup the LDH
 
 ```
 docker compose up -d
+
 ```
+Wait a minute and direct browser to http://localhost:3000 to reach signup page.
+
+## Destroy all
+
+* If you like to completely destroy your testing installation
+```bash
+docker compose down
+docker volume rm seek-solr-data seek-filestore seek-cache seek-db
+rm docker-compose.env
+
+```
+  
 
 [project-issues]: https://github.com/nfdi4health/ldh-deployment/issues
 [docker-install]: https://docs.docker.com/get-docker/
