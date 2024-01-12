@@ -61,6 +61,7 @@ docker compose up -d
 
 ```
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
+Iy you get a "502 Bad Gateway" wait a litte longer.
 
 ## Destroy all
 
