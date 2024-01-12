@@ -1,11 +1,10 @@
 version: '3.1'
-
 services:
   seek-db:
     image: mysql:5.7
     container_name: nfdi4health-ldh-seek-db
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    restart: always
+    restart: unless-stopped 
     stop_grace_period: 1m30s
     env_file:
       - docker-compose.env
@@ -14,16 +13,14 @@ services:
 
   seek:
     image: ghcr.io/nfdi4health/ldh
-
     container_name: nfdi4health-ldh-seek
     command: docker/entrypoint.sh
-    restart: always
+    restart: unless-stopped
     environment:
-      RAILS_ENV: "production"
-      SOLR_PORT: "8983"
-      SOLR_HOST: "seek-solr"
-      NO_ENTRYPOINT_WORKERS: "1"
-      RAILS_RELATIVE_URL_ROOT: "/"
+      RAILS_ENV: production
+      SOLR_PORT: 8983
+      SOLR_HOST: seek-solr
+      NO_ENTRYPOINT_WORKERS: 1
     env_file:
       - docker-compose.env
     volumes:
@@ -40,14 +37,13 @@ services:
 
   seek-workers:
     image: ghcr.io/nfdi4health/ldh
-
     container_name: nfdi4health-ldh-seek-workers
     command: docker/start_workers.sh
-    restart: always
+    restart: unless-stopped
     environment:
-      RAILS_ENV: "production"
-      SOLR_PORT: "8983"
-      SOLR_HOST: "seek-solr"
+      RAILS_ENV: production
+      SOLR_PORT: 8983
+      SOLR_HOST: seek-solr
       RAILS_RELATIVE_URL_ROOT: "/"
     env_file:
       - docker-compose.env
@@ -64,16 +60,25 @@ services:
   seek-solr:
     image: fairdom/seek-solr:8.11
     container_name: nfdi4health-ldh-seek-solr
-    restart: always
+    restart: unless-stopped
     environment:
-      SOLR_JAVA_MEM: "-Xms512m -Xmx1024m"
+      SOLR_JAVA_MEM: -Xms512m -Xmx1024m
+      GC_TUNE: "-XX:-UseLargePages"
       LOG4J_FORMAT_MSG_NO_LOOKUPS: "true"
     volumes:
       - seek-solr-data:/var/solr/
-    entrypoint: ["docker-entrypoint.sh", "solr-precreate", "seek", "/opt/solr/server/solr/configsets/seek_config"]
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - seek
+      - /opt/solr/server/solr/configsets/seek_config      
 
 volumes:
-  seek-db:
-  seek-cache:
   seek-filestore:
+    external: true
+  seek-db:c
+    external: true
   seek-solr-data:
+    external: true
+  seek-cache:
+    external: true
