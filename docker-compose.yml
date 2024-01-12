@@ -76,7 +76,7 @@ services:
 volumes:
   seek-filestore:
     external: true
-  seek-db:c
+  seek-db:
     external: true
   seek-solr-data:
     external: true
