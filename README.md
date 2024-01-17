@@ -6,8 +6,7 @@ Deployment instructions and resources for an NFDI4Health Local Data Hub.
 ## Disclaimer
 
 This project and it's components are subject to heavy development. 
-However, if you wish to participate in the development of the 
-development of the software, you are strongly encouraged to do so. Feel free to submit bug reports and suggestions 
+However, if you wish to participate in the development of the software, you are strongly encouraged to do so. Feel free to submit bug reports and suggestions 
 in the [issue tracker][project-issues]. 
 
 
