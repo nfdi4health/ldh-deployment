@@ -32,7 +32,7 @@ cd ldh-deployment
 
 ```
 
-* Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password
+* Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password- either manually or using the openssl command. 
   
 E.g. generate good password with openssl:
 ```bash
@@ -61,11 +61,11 @@ docker compose up -d
 
 ```
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
-Iy you get a "502 Bad Gateway" wait a litte longer.
+If you get a "502 Bad Gateway" wait a litte longer.
 
 ## Destroy all
 
-* If you like to completely destroy your testing installation
+* If you like to completely destroy your testing installation including data and password
 ```bash
 docker compose down
 docker volume rm seek-solr-data seek-filestore seek-cache seek-db
