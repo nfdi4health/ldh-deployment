@@ -17,11 +17,12 @@ in the [issue tracker][project-issues].
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
 * `docker-compose` is used instead of `docker compose` for compatibility with older installations
 * You need a compose version v2 - test with `docker-compose version`
+* LDH works perfectly even with root-less docker; there is no need to have root right on the host
 * Consider allowing your non-root Linux user to use docker by adding to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
 
 
-## Usage
+## Download and Install
 
 For a first and simple glimpse of what an LDH will look like follow the steps below.
 
@@ -49,15 +50,16 @@ cat docker-compose.env.tpl \
 
 ```
 
-* Create Volumes (internal Volumes are created automatically). The prefix should match the value of `COMPOSE_PROJECT_NAME` in `.env`
+* Create Volumes (internal Volumes are created automatically) using prefix in `COMPOSE_PROJECT_NAME` in `.env`
 
 ```bash
-docker volume create n4h_filestore
-docker volume create n4h_db
+source .env
+docker volume create ${COMPOSE_PROJECT_NAME}_filestore
+docker volume create ${COMPOSE_PROJECT_NAME}_db
 
 ```
 
-* Startup the LDH
+## Startup the LDH
 
 ```
 docker-compose up -d
@@ -66,17 +68,45 @@ docker-compose up -d
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
 If you get a "502 Bad Gateway" wait a litte longer.
 
+
+## Backup & Restore
+There is a simple backup script `backup.sh` include which will dump your database and filestore to a backup directory. 
+You can configure the number of copies to be held in backup.
+
+```
+bash backup.sh
+
+```
+
+You may destroy all data, including passwords. The only thing you need is to keep a valid copy of filestore and mysqldump:
+
+```
+bash restore.sh backup/<your backup.sql.gz>
+```
+
 ## Destroy all
 
 * If you like to completely destroy your testing installation including data and password
 
 ```bash
+source .env
 docker-compose down -v
-docker volume rm n4h-filestore n4h-db
+docker volume rm ${COMPOSE_PROJECT_NAME}_filestore ${COMPOSE_PROJECT_NAME}_db
 rm docker-compose.env
 
 ```
-  
+
+## Go further
+The above working setting can be altered in many ways:
+* like to use an undockered, external mysql database? (configure `docker-compose.env`; remove db from `docker-compose.yml`)
+* like to put the filestore on external undockered file space? (use bind mounts)
+* like to use Container-Orchestration like Kubernetes?
+* want to expose your LDH to the internet - ask you local sysadmin!
+* Backup/Restore can be based on volumes too
+* see https://docs.docker.com/ from more
+
+
+
 [project-issues]: https://github.com/nfdi4health/ldh-deployment/issues
 [docker-install]: https://docs.docker.com/get-docker/
 [docker-ugroup]: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
