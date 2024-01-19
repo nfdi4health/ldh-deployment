@@ -25,7 +25,7 @@ find $BACKUPDIR -type f -name '*.sql.gz' -mtime +${DB_COPIES} -exec rm {} \;
 find $BACKUPDIR -type f -name '*.tar.gz' -mtime +${FILE_COPIES} -exec rm {} \;
 
 (cd $BACKUPDIR && ln -sf database-$NOW.sql.gz  database-current.sql.gz)
-(cd $BACKUPDIR && ln -sf filestore-$NOW.sql.gz  filestore-current.sql.gz)
+(cd $BACKUPDIR && ln -sf filestore-$NOW.tar.gz  filestore-current.tar.gz)
 
 
 ls -l $FILE_BACKUP $DB_BACKUP
