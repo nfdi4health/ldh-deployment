@@ -10,11 +10,6 @@ DB_BACKUP=$BACKUPDIR/$MYSQL_DATABASE-$NOW.sql.gz
 FILE_BACKUP=$BACKUPDIR/filestore.tar.gz
 RETAIN=14
 
-usage() {
-    echo -e "Usage: $0 [dump]"
-    echo filestore would be restored from $FILE_BACKUP
-    echo Stack should be up
-}
 
 mkdir -p $BACKUPDIR
 
