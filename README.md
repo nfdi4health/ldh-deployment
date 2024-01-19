@@ -15,7 +15,9 @@ in the [issue tracker][project-issues].
 ### Docker
 
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
-* Also consider allowing your non-root Linux user to use docker by adding it to the docker group
+* `docker-compose` is used instead of `docker compose` for compatibility with older installations
+* You need a compose version v2 - test with `docker-compose version`
+* Consider allowing your non-root Linux user to use docker by adding to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
 
 
@@ -31,9 +33,14 @@ cd ldh-deployment
 
 ```
 
-* Copy `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password- either manually or using the openssl command. 
-  
-E.g. generate good password with openssl:
+## Configuration
+* Basic configuration is done in `.env`. You have to change nothing now. 
+    * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host
+    * SEEK_PORT is the port you will reach LDH on this host, standard would be localhost:3000
+    * DB_PORT is the port of underlying mysql database; this is optional
+
+* Database configuration is specified in `docker-compose.env`. This is created by copying `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password-  either manually or using the openssl command, e.g.
+
 ```bash
 cat docker-compose.env.tpl \
   | sed "s|<db-password>|$(openssl rand -base64 21)|" \
@@ -42,21 +49,18 @@ cat docker-compose.env.tpl \
 
 ```
 
-* Create Volumes
+* Create Volumes (internal Volumes are created automatically). The prefix should match the value of `COMPOSE_PROJECT_NAME` in `.env`
 
-Create external volumes
 ```bash
-docker volume create seek-filestore
-docker volume create seek-cache
-docker volume create seek-db
-docker volume create seek-solr-data
+docker volume create n4h_filestore
+docker volume create n4h_db
 
 ```
 
-* Use compose to startup the LDH
+* Startup the LDH
 
 ```
-docker compose up -d
+docker-compose up -d
 
 ```
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
@@ -65,14 +69,14 @@ If you get a "502 Bad Gateway" wait a litte longer.
 ## Destroy all
 
 * If you like to completely destroy your testing installation including data and password
+
 ```bash
-docker compose down
-docker volume rm seek-solr-data seek-filestore seek-cache seek-db
+docker-compose down -v
+docker volume rm n4h-filestore n4h-db
 rm docker-compose.env
 
 ```
   
-
 [project-issues]: https://github.com/nfdi4health/ldh-deployment/issues
 [docker-install]: https://docs.docker.com/get-docker/
 [docker-ugroup]: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
