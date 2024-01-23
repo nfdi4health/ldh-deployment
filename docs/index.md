@@ -1,3 +1,11 @@
+---
+layout: default
+title: home
+nav_order: 1
+permalink: /
+---
+
+
 [![Build Status](https://github.com/nfdi4health/ldh/actions/workflows/tests.yml/badge.svg)](https://github.com/nfdi4health/ldh/actions/workflows/tests.yml)
 # Local Data Hub
 
