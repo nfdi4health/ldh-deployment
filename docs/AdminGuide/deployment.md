@@ -1,3 +1,8 @@
+---
+layout: default
+title: LDH Einrichtung mittels Docker Skript
+parent: AdminGuide
+---
 # NFDI4Health LDH Deployment
 Anweisungen und Ressourcen für die Einrichtung eines NFDI4Health Local Data Hup.
 
@@ -22,7 +27,7 @@ cat docker-compose.env.tpl \
   | sed "s|<db-password>|$(openssl rand -base64 21)|" \
   | sed "s|<root-password>|$(openssl rand -base64 21)|" \
   > docker-compose.env
-```  
+```
 * Verwenden Sie compose zum Starten des LDH
 ```
 docker compose up -d

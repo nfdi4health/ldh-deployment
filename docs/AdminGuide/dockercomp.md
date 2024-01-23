@@ -1,9 +1,15 @@
+---
+layout: default
+title: Verwendung in Docker
+parent: AdminGuide
+---
+
 # Docker
 ## Verwenden von Docker Compose
 
 Mit Docker Compose können Sie SEEK in Docker zusammen mit MySQL und SOLR ausführen, die in eigenen Containern als Mikrodienste ausgeführt werden.
 
-Zunächst muss [Docker installiert](https://docs.docker.com/engine/install/) sein. 
+Zunächst muss [Docker installiert](https://docs.docker.com/engine/install/) sein.
 Informationen zur Installation von Docker Compose finden Sie im Docker Compose-Installationshandbuch.
 
 Nach der Installation sind lediglich die Dateien `docker-compose.yml` und `docker/db.env` erforderlich. Sie können sich aber auch einfach die SEEK-Quelle von GitHub ansehen – siehe [LHD installieren](./install_dev.md#ldh-installieren). Wir empfehlen Ihnen, die Passwörter in der Datei `db.env` zu ändern.
@@ -41,10 +47,10 @@ seek:
 Als Alternative zum Ändern des Ports (insbesondere wenn mehrere Instanzen auf demselben Computer ausgeführt werden) können Sie einen Proxy über Apache oder Nginx durchführen. Z.B. Für Nginx würden Sie einen virtuellen Host wie folgt konfigurieren:
 ```bash
 server {
-    listen 80; 
+    listen 80;
     server_name www.my-seek.org;
     client_max_body_size 2G;
-    
+
     location / {
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   Host      $host:$server_port;
@@ -75,14 +81,14 @@ docker-compose start
 und zum Wiederherstellen in neue Volumes:
 ```bash
 docker-compose down
-docker volume rm seek-filestore 
-docker volume rm seek-mysql-db     
+docker volume rm seek-filestore
+docker volume rm seek-mysql-db
 docker volume create --name=seek-filestore
 docker volume create --name=seek-mysql-db
 docker-compose up --no-start
 docker run --rm --volumes-from seek -v $(pwd):/backup ubuntu bash -c "tar xfv /backup/seek-filestore.tar"
 docker run --rm --volumes-from seek-mysql -v $(pwd):/backup ubuntu bash -c "tar xfv /backup/seek-mysql-db.tar"
-docker-compose up -d  
+docker-compose up -d
 ```
 **Beachten Sie**, dass es beim Zurücksetzen einer Version, beispielsweise nach einem fehlgeschlagenen Upgrade, besonders wichtig ist, die Volumes „seek-filestore“ und „seek-mysql-db“ zu entfernen und neu zu erstellen – andernfalls könnten zusätzliche Dateien übrig bleiben, wenn das Backup übertrieben wiederhergestellt wird .
 
@@ -103,7 +109,7 @@ Führen Sie mit der neuen Datei docker-compose.yml Folgendes aus:
 ```
 docker-compose down
 docker-compose pull
-docker-compose up -d seek db solr            # avoiding the seek-workers, which will interfere    
+docker-compose up -d seek db solr            # avoiding the seek-workers, which will interfere
 docker exec -it seek docker/upgrade.sh
 docker-compose down
 docker-compose up -d

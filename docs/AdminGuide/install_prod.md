@@ -1,3 +1,8 @@
+---
+layout: default
+title: LDH in einer Produktivumgebung
+parent: AdminGuide
+---
 # Installation von LDH in einer Produktionsumgebung
 
 Diese Seite enthält einige zusätzliche Hinweise zur Einrichtung von SEEK für die Produktion (d.h. für den realen Einsatz und nicht für die Entwicklung).
@@ -148,7 +153,7 @@ Ausführen:
 ```bash
 sudo chmod +x /etc/init.d/delayed_job-seek
 sudo update-rc.d delayed_job-seek Voreinstellungen
-``` 
+```
 Starten Sie es mit:
 ```bash
 sudo /etc/init.d/delayed_job-seek start

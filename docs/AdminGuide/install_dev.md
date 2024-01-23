@@ -1,3 +1,9 @@
+---
+layout: default
+title: LDH als Entwicklungssystem
+parent: AdminGuide
+---
+
 # Installation Local Data Hub
 ## Einführung
 Diese Schritte beschreiben, wie Sie den LDH direkt auf dem Rechner (Bare-Metal) installieren.

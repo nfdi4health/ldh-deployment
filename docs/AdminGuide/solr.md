@@ -1,3 +1,8 @@
+---
+layout: default
+title: Solr einrichten
+parent: AdminGuide
+---
 # Einrichten der Apache Solr Suchmaschine
 
 Seit Version 1.12 von FAIRDOM-SEEK muss [Apache Solr](https://solr.apache.org/) nun separat eingerichtet werden, anstatt die integrierte `Sunspot Solr` zu verwenden.
@@ -72,4 +77,3 @@ Solr ist nun eingerichtet, und Sie können Aufträge zur Neuindizierung des Inha
 ```bash
 bundle exec rake seek:reindex_all
 ```
-
