@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Verwendung in Docker
-parent: AdminGuide
+parent: Admin Guide
 ---
 
 # Docker

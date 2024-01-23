@@ -1,7 +1,7 @@
 ---
 layout: default
 title: LDH Einrichtung mittels Docker Skript
-parent: AdminGuide
+parent: Admin Guide
 ---
 # NFDI4Health LDH Deployment
 Anweisungen und Ressourcen für die Einrichtung eines NFDI4Health Local Data Hup.

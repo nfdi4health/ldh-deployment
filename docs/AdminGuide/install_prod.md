@@ -1,7 +1,7 @@
 ---
 layout: default
 title: LDH in einer Produktivumgebung
-parent: AdminGuide
+parent: Admin Guide
 ---
 # Installation von LDH in einer Produktionsumgebung
 

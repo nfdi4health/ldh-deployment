@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Solr einrichten
-parent: AdminGuide
+parent: Admin Guide
 ---
 # Einrichten der Apache Solr Suchmaschine
 

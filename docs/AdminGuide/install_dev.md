@@ -1,7 +1,7 @@
 ---
 layout: default
 title: LDH als Entwicklungssystem
-parent: AdminGuide
+parent: Admin Guide
 ---
 
 # Installation Local Data Hub
