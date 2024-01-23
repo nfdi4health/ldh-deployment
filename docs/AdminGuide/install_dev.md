@@ -10,7 +10,7 @@ Diese Schritte beschreiben, wie Sie den LDH direkt auf dem Rechner (Bare-Metal) 
 
 Für die Installation und Ausführung mit Docker, die in vielen Fällen einfacher und schneller ist, lesen Sie bitte die Anleitung zu [Docker Compose](./dockercomp.md).
 
-LDH basiert auf der Ruby on Rails Plattform. Obwohl die Informationen auf dieser Seite Sie mit allem versorgen sollten, was Sie brauchen, um eine Basisinstallation von LDH zum Laufen zu bringen, wäre etwas Hintergrundlektüre zu Ruby on Rails von Vorteil, wenn es für Sie neu ist. Dokumentation und Ressourcen, die Ruby on Rails beschreiben, finden Sie in der [Ruby Dokumentation][ruby-dok].
+LDH basiert auf der Ruby on Rails Plattform. Obwohl die Informationen auf dieser Seite Sie mit allem versorgen sollten, was Sie brauchen, um eine Basisinstallation von LDH zum Laufen zu bringen, wäre etwas Hintergrundlektüre zu Ruby on Rails von Vorteil, wenn es für Sie neu ist. Dokumentation und Ressourcen, die Ruby on Rails beschreiben, finden Sie in der [Ruby Dokumentation](https://guides.rubyonrails.org/).
 
 LDH baut auf Rails auf und benötigt Ruby 2.8.
 
@@ -185,5 +185,5 @@ Sie sollten jetzt auch unseren Administrationsleitfaden lesen, in dem einige gru
 
 
 
-[ruby-dok]:[https://guides.rubyonrails.org/]
+
 [dockercomp]:[dockercomp.md]
