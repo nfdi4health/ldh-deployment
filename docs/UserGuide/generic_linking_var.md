@@ -1,3 +1,9 @@
+---
+layout: default
+title: Allgemeine Verknüpfungsvariablen in LDH
+nav_order: 15
+parent: LDH
+---
 # Allgemeine Verknüpfungsvariablen in LDH
 
 ## Titel
@@ -47,7 +53,7 @@ Technologietyp 1
 
 Organismus 1
 
-## 
+##
 
 ### Freigabe
 

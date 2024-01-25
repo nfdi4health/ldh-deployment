@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Projekt beitreten
-parent: User Guide
+nav_order: 7
+parent: LDH
 ---
 # Projekt beitreten
 

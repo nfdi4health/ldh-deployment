@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Zitierungen
-parent: User Guide
+nav_order: 12
+parent: LDH
 ---
 # Investigation, Studie oder Assay zitierfähig machen
 

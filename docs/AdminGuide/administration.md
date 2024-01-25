@@ -1,3 +1,8 @@
+---
+layout: default
+title: Verwaltung von SEEK
+parent: Admin Guide
+---
 # Verwaltung von SEEK
 
 Hier werden einige grundlegende Administrationsaufgaben beschrieben, die Sie nach der Installation von SEEK durchführen können. Alle Verwaltungsaufgaben finden Sie im Administrationsbereich, indem Sie die Registerkarte Konto und dann die Serververwaltung auswählen. Viele der Einstellungen haben eine Beschreibung ihrer Funktion und werden hier nicht behandelt.

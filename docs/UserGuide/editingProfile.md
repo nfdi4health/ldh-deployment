@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Profil bearbeiten
+nav_order: 5
 parent: User Guide
 ---
 

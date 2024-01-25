@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Publikationen hinzufügen
-parent: User Guide
+nav_order: 11
+parent: LDH
 ---
 # Publikation hinzufügen
 
