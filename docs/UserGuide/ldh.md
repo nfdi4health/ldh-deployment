@@ -4,7 +4,7 @@ title: LDH
 nav_order: 2
 parent: User Guide
 has_children: true
-permalink: docs/UserGuide
+
 ---
 
 # LDH
