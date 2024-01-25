@@ -1,3 +1,8 @@
+---
+layout: default
+title: Zitierungen
+parent: User Guide
+---
 # Investigation, Studie oder Assay zitierfähig machen
 
 Mit SEEK können Sie Untersuchungen, Studien und Assays veröffentlichen, und zwar vollständig mit der Struktur und den Assets, aus denen sie bestehen. Sie können der Untersuchung dann einem DOI zuweisen, der eine dauerhafte Verknüpfung bietet, mit der Sie und andere sie zitieren können.
@@ -52,4 +57,3 @@ DOI 1
 Sie können den DOI-Link auch in den Attributen des Schnappschusses finden
 
 DOI 1
-

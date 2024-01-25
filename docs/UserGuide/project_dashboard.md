@@ -1,3 +1,8 @@
+---
+layout: default
+title: Projekt Dashboard
+parent: User Guide
+---
 # Projekt-Dashboard
 
 Die Seite "Projekt-Dashboard" enthält verschiedene Diagramme, die Metriken zu den Aktivitäten innerhalb des Projekts über einen bestimmten Zeitraum darstellen.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Profil bearbeiten
+parent: User Guide
+---
+
 # Profil bearbeiten
 
 Um Ihr Profil zu bearbeiten, müssen Sie eingeloggt sein. Wenn Sie eingeloggt sind, können Sie auf Ihren Namen in der oberen rechten Ecke von LDH klicken.

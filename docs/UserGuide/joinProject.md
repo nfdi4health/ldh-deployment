@@ -1,3 +1,8 @@
+---
+layout: default
+title: Projekt beitreten
+parent: User Guide
+---
 # Projekt beitreten
 
 Sie werden aufgefordert, einem Projekt beizutreten, wenn Sie sich zum ersten Mal registrieren und noch nicht Mitglied eines Projekts sind.

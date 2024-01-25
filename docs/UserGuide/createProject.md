@@ -1,3 +1,9 @@
+---
+layout: default
+title: Projekt erstelle
+parent: User Guide
+---
+
 # Was ist ein Project
 
 Ein Projekt stellt eine Gruppe von einer oder mehreren Personen dar, die gemeinsam an einer bestimmten Aktivität arbeiten. Das Projekt bietet die Möglichkeit, die Aktivität zu beschreiben und zu fördern und dem Team Anerkennung zukommen zu lassen. Das Projekt hat einen Titel, optional eine Beschreibung, eine öffentliche Website und eine Avatar-Grafik. Die Benutzer müssen Mitglied eines Projekts sein, bevor sie Artikel registrieren können, die dann mit diesem Projekt in Verbindung stehen, und ein Benutzer kann unbegrenzt an vielen Projekten teilnehmen.

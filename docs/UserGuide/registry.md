@@ -1,3 +1,9 @@
+---
+layout: default
+title: Registrierung in SEEK
+parent: User Guide
+---
+
 # Registrierung in SEEK
 
 Um sich im NFDI4Health Local Data Hub (LDH) zu registrieren, müssen Sie auf die Schaltfläche **"Registrer"** in der oberen rechten Ecke klicken.
@@ -20,7 +26,7 @@ Sie werden dann zu einem Bildschirm weitergeleitet, auf dem Sie weitere Informat
 - Vorname
 - Nachname
 - Ihre E-Mail-Adresse, die automatisch aus dem vorherigen Bildschirm übernommen werden sollte.
-- ORCID ID - wenn Sie noch keine ORCID haben, müssen Sie sich unter [OrcID.org](http://orcid.org/) registrieren lassen.
+- ORCID ID - wenn Sie noch keine ORCID haben, müssen Sie sich unter [OrcID.org]:(http://orcid.org/) registrieren lassen.
 
 Obligatorische Angaben sind mit einem roten Sternchen gekennzeichnet. Nachdem Sie den Rest Ihrer Daten eingegeben haben, müssen Sie bei den meisten Installationen von LDH Ihr Konto aktivieren. Sie erhalten dann eine E-Mail an das von Ihnen angegebene E-Mail-Konto.
 
