@@ -1,3 +1,8 @@
+---
+layout: default
+title: Anleitung für andere Distributionen
+parent: Admin Guide
+---
 # Anleitung für andere Distributionen
 - [Linux](#installation-von-seek-für-andere-linux-distributionen)
    - [Linux Mint 18](#linux-mint-18)
@@ -6,7 +11,7 @@
       - [Installieren von RVM](#installieren-von-rvm)
       - [Einrichten der Datenbank](#einrichten-der-datenbank)
       - [Einrichten für die Produktion mit Passenger Phusion](#einrichten-für-die-produktion-mit-passenger-phusion)
-      - 
+      -
    - [Ubuntu 20.04 (LTS)](#ubuntu-2004-lts)
    - [Debian](#debian)
 - [Mac OS](#installation-von-seek-für-mac-os-x)
@@ -17,7 +22,7 @@
       - [Puma Gem installieren](#puma-gem-installieren)
       - [Andere Hinweise](#andere-hinweise)
       - [Verbindung zu MySQL von einem Client aus](#verbindung-zu-mysql-von-einem-client-aus)
-   
+
 
 
 
@@ -219,7 +224,7 @@ sudo port select mysql mysql8
 ```
 Starten Sie den Server:
 ```bash
-sudo port load mysql8-server     
+sudo port load mysql8-server
 ```
 Initialisieren Sie die Datenbank.
 
@@ -288,7 +293,7 @@ default-character-set  =  utf8
 
 [mysqld_safe]
 socket                 = /opt/local/var/run/mysql8/mysqld.sock
-nice                   =  0 
+nice                   =  0
 default-character-set  = utf8
 
 [mysqld]
@@ -305,7 +310,7 @@ default-character-set  =  utf8
 ```
 Starten Sie dann MySQL neu (möglicherweise müssen Sie den Prozess beenden):
 ```bash
-sudo port unload mysql8-server 
+sudo port unload mysql8-server
 
 ps -ax | grep mysql -> wenn mysqld noch da ist, verwenden Sie die aufgelistete PID:
 
