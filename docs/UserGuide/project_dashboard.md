@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Projekt Dashboard
-nav_order: 14
+nav_order: 8
 parent: LDH
+grand_parent: User Guide
 ---
 # Projekt-Dashboard
 

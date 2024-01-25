@@ -1,8 +1,9 @@
 ---
 layout: default
 title: ISA Best Practice
-nav_order: 17
+nav_order: 1
 parent: ISA Nutzung für NFDI4Health
+grand_parent: User Guide
 ---
 
 # Kurzanleitung Eingabe SEEK

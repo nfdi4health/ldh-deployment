@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Profil bearbeiten
-nav_order: 5
-parent: User Guide
+nav_order: 2
+parent: User
+grand_parent: User Guide
 ---
 
 # Profil bearbeiten

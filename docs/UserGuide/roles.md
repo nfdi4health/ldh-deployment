@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Spezielle Nutzerrollen
-nav_order: 13
+nav_order: 7
 parent: LDH
+grand_parent: User Guide
 ---
 # Spezielle Benutzerrollen
 

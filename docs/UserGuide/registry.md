@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Registrierung in SEEK
-nav_order: 4
+nav_order: 1
 parent: User
+grand_parent: User Guide
 ---
 
 # Registrierung in SEEK

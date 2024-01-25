@@ -1,8 +1,9 @@
 ---
 layout: default
 title: ISA Struktur erstellen
-nav_order: 9
+nav_order: 3
 parent: LDH
+grand_parent: User Guide
 ---
 
 # Generierung der ISA-Struktur

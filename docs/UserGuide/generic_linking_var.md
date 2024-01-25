@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Allgemeine Verknüpfungsvariablen in LDH
-nav_order: 15
+nav_order: 9
 parent: LDH
+grand_parent: User Guide
 ---
 # Allgemeine Verknüpfungsvariablen in LDH
 

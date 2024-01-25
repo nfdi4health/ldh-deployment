@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Projekt erstelle
-nav_order: 8
+nav_order: 2
 parent: LDH
+grand_parent: User Guide
 ---
 
 # Was ist ein Project
