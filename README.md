@@ -67,6 +67,11 @@ docker-compose up -d
 ```
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
 If you get a "502 Bad Gateway" wait a litte longer.
+You can watch the logs with
+
+```
+docker-compose logs -f seek
+```
 
 
 ## Backup & Restore
