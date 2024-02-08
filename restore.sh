@@ -7,7 +7,6 @@ source docker-compose.env
 
 usage() {
     echo -e "Usage: $0 database.sql.gz filestore.tar.gz"
-	echo filestore would be restored from $FILE_BACKUP
 	echo Stack should be up and running
 }
 
