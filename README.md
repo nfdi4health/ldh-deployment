@@ -89,6 +89,11 @@ You may destroy all data, including passwords. The only thing you need is to kee
 bash restore.sh <your database.sql.gz from backup> <your filestore.tar.gz from backup>
 ```
 
+## Update image
+
+Follow "Upgrading between versions" in https://docs.seek4science.org/tech/docker/docker-compose.html
+But use LDH image name "ghcr.io/nfdi4health/ldh:latest" (or release like ghcr.io/nfdi4health/ldh:v0.2.1, see https://github.com/nfdi4health/ldh/releases) instead of "fairdom/seek:1.14".
+
 ## Destroy all
 
 * If you like to completely destroy your testing installation including data and password
