@@ -86,7 +86,7 @@ bash backup.sh
 You may destroy all data, including passwords. The only thing you need is to keep a valid copy of filestore and mysqldump:
 
 ```
-bash restore.sh backup/<your backup.sql.gz>
+bash restore.sh <your database.sql.gz from backup> <your filestore.tar.gz from backup>
 ```
 
 ## Destroy all
