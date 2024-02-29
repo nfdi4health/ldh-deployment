@@ -8,7 +8,7 @@ grand_parent: User Guide
 
 # Registrierung in SEEK
 
-Um sich im NFDI4Health Local Data Hub (LDH) zu registrieren, müssen Sie auf die Schaltfläche **"Registrer"** in der oberen rechten Ecke klicken.
+Um sich im NFDI4Health Local Data Hub (LDH) zu registrieren, müssen Sie auf die Schaltfläche **"Register"** in der oberen rechten Ecke klicken.
 
 ![Register 1](../images/UserGuide/)
 *Registrierung 1*
