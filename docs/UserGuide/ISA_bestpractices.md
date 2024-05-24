@@ -9,9 +9,9 @@ grand_parent: User Guide
 # Kurzanleitung Eingabe SEEK
 ## Allgemeine Strukturierung in SEEK
 ### Übersicht der Ressourcen
-![ISA Seek Struktur](./images/BestPractice/seekStruct.png)
+![ISA Seek Struktur](../images/BestPractice/seekStruct.png)
 ### Mögliche Vernetzungen
-[//]:<![ISA Seek networking](./images/BestPractice/network.png)>
+[//]:<![ISA Seek networking](../images/BestPractice/network.png)>
 
 ||Programme|Project|Investigation|Study|Assay|Publication|Data|Document|
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -47,7 +47,7 @@ Idee:  Sponsor./Programme ist UL.  Die Projektebene bündelt alle Personen des F
 
 In SEEK soll sich für die Investigation folgendes Bild ergeben:
 
-![Seek Tree](./images/BestPractice/studytree.png)
+![Seek Tree](../images/BestPractice/studytree.png)
 *Study Tree*
 
 ## Klickanleitung
@@ -95,7 +95,7 @@ Es gibt viele Wege zum Ziel. Ressourcen können aus anderen Ressourcen heraus od
 - Aus Investigationansicht
     - Entweder Related Items oder kleine Grafik
 
-    - ![View Investigation](./images/BestPractice/investigation.png)
+    - ![View Investigation](../images/BestPractice/investigation.png)
 
 ## Feintuning
 
@@ -109,11 +109,11 @@ Es gibt viele Wege zum Ziel. Ressourcen können aus anderen Ressourcen heraus od
 - Test z.B. über Ansicht ohne Anmeldung
 - Investigation, Studies, Assays, Data files, Documents nach Wahl über “Manage <'resource>'” , z.B. ist auch sowas
 
-![hidden tree](./images/BestPractice/studytree_hiddenview.png)
-![rights](./images/BestPractice/view_options.png)
+![hidden tree](../images/BestPractice/studytree_hiddenview.png)
+![rights](../images/BestPractice/view_options.png)
 
 Für nicht autoriserte User sieht dann die Investigation/Related Item so aus:
 
- ![related Items](./images/BestPractice/RelatedItems.png)
+ ![related Items](../images/BestPractice/RelatedItems.png)
 
 Die “+” steht für “Hidden Items” – man sieht also, dass man nicht alles sieht.
