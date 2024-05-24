@@ -20,6 +20,7 @@ Projektspezifische Rollen:
 - [Projektadministrator](#programmadministrator)
 
 Im Folgenden finden Sie eine Zusammenfassung der Fähigkeiten der einzelnen Rollen.
+
 || **Project admin**| **Asset Housekeeper** | **Asset Gatekeeper** | **Normal User** |
 |---|:---:|:---:|:---:|:---:|
 | **Notified of new project member**|X||||
