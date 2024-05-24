@@ -11,7 +11,7 @@ permalink: /
 
 ## Über den Local Data Hub
 ---
-Die Nfdi4Health Local Data Hub (LDH) Plattform ist eine webbasierte Ressource für den Austausch von heterogenen wissenschaftlichen Forschungsdaten, Modellen oder Simulationen, Prozessen und Forschungsergebnissen. Sie bewahrt Assoziationen zwischen ihnen sowie Informationen über die beteiligten Personen und Organisationen. Der LDH basiert dabei auf dem [SEEK4Science][seek] Framework. Grundlage von SEEK ist die ISA-Infrastruktur, ein Standardformat zur Beschreibung, wie einzelne Experimente zu umfassenderen Studien und Untersuchungen zusammengeführt werden. Innerhalb von SEEK wurde ISA erweitert und ist konfigurierbar, so dass die Struktur auch außerhalb der Biologie verwendet werden kann.
+Die NFDI4Health Local Data Hub (LDH) Plattform ist eine webbasierte Ressource für den Austausch von heterogenen wissenschaftlichen Forschungsdaten, Modellen oder Simulationen, Prozessen und Forschungsergebnissen. Sie bewahrt Assoziationen zwischen ihnen sowie Informationen über die beteiligten Personen und Organisationen. Der LDH basiert dabei auf dem [SEEK4Science][seek] Framework. Grundlage von SEEK ist die ISA-Infrastruktur, ein Standardformat zur Beschreibung, wie einzelne Experimente zu umfassenderen Studien und Untersuchungen zusammengeführt werden. Innerhalb von SEEK wurde ISA erweitert und ist konfigurierbar, so dass die Struktur auch außerhalb der Biologie verwendet werden kann.
 
 LDH enthält eine semantische Technologie, die anspruchsvolle Abfragen der Daten ermöglicht, ohne die Benutzer zu behindern.
 
