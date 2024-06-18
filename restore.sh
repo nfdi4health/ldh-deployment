@@ -23,12 +23,12 @@ echo restore database
 gzip -cd ${DB_BACKUP}| docker-compose exec -T db mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
 
 echo restore filestore
-docker-compose cp ${FILE_BACKUP} seek:/seek/filestore.tar.gz
-docker-compose exec seek tar xfz filestore.tar.gz -C / 
-docker-compose exec seek rm -f filestore.tar.gz
+docker compose cp ${FILE_BACKUP} seek:/seek/filestore.tar.gz
+docker compose exec seek tar xfz filestore.tar.gz -C / 
+docker compose exec seek rm -f filestore.tar.gz
 
 echo reindex solar
-docker-compose exec seek bundle exec rake seek:reindex_all
+docker compose exec seek bundle exec rake seek:reindex_all
 
 
 
