@@ -15,7 +15,7 @@ in the [issue tracker][project-issues].
 ### Docker
 
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
-* `docker-compose` is used instead of `docker compose` for compatibility with older installations
+* `docker-compose` is deprecated; please ensure that you can use `docker compose` (compose beeing option for docker)
 * You need a compose version v2 - test with `docker-compose version`
 * LDH works perfectly even with root-less docker; there is no need to have root right on the host
 * Consider allowing your non-root Linux user to use docker by adding to the docker group
