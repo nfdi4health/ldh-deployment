@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# using docker-compose instead of docker compose for better compatibility
-
 source .env
 source docker-compose.env
 
