@@ -15,8 +15,8 @@ in the [issue tracker][project-issues].
 ### Docker
 
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
-* `docker-compose` is used instead of `docker compose` for compatibility with older installations
-* You need a compose version v2 - test with `docker-compose version`
+* `docker-compose` is deprecated; please ensure that you can use `docker compose` (compose beeing option for docker)
+* You need a compose version v2 - test with `docker compose version`
 * LDH works perfectly even with root-less docker; there is no need to have root right on the host
 * Consider allowing your non-root Linux user to use docker by adding to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
@@ -38,7 +38,7 @@ cd ldh-deployment
 * Basic configuration is done in `.env`. You have to change nothing now. 
     * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host
     * SEEK_PORT is the port you will reach LDH on this host, standard would be localhost:3000
-    * DB_PORT is the port of underlying mysql database; this is optional
+    * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trrials.en.yml"
 
 * Database configuration is specified in `docker-compose.env`. This is created by copying `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password-  either manually or using the openssl command, e.g.
 
@@ -62,7 +62,7 @@ docker volume create ${COMPOSE_PROJECT_NAME}_db
 ## Startup the LDH
 
 ```
-docker-compose up -d
+docker compose up -d
 
 ```
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
@@ -70,7 +70,7 @@ If you get a "502 Bad Gateway" wait a litte longer.
 You can watch the logs with
 
 ```
-docker-compose logs -f seek
+docker compose logs -f seek
 ```
 
 
@@ -83,7 +83,8 @@ bash backup.sh
 
 ```
 
-You may destroy all data, including passwords. The only thing you need is to keep a valid copy of filestore and mysqldump:
+You may destroy all data, including passwords. The only thing you need is to keep a valid copy of filestore and database.
+To restore all, startup the LDH and type 
 
 ```
 bash restore.sh <your database.sql.gz from backup> <your filestore.tar.gz from backup>
@@ -100,7 +101,7 @@ But use LDH image name "ghcr.io/nfdi4health/ldh:latest" (or release like ghcr.io
 
 ```bash
 source .env
-docker-compose down -v
+docker compose down -v
 docker volume rm ${COMPOSE_PROJECT_NAME}_filestore ${COMPOSE_PROJECT_NAME}_db
 rm docker-compose.env
 

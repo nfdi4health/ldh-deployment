@@ -15,13 +15,13 @@ FILE_COPIES=2
 
 mkdir -p $BACKUPDIR
 
-docker-compose exec -T db mysqldump \
+docker compose exec -T db mysqldump \
 	--user=root \
 	--password=$MYSQL_ROOT_PASSWORD \
 	--host=$MYSQL_HOST $MYSQL_DATABASE \
 	| tee 2>$BACKUPDIR/error.log | gzip -c >$BACKUPDIR/$DB_BACKUP
 
-docker-compose exec -T seek tar cfz - -C / seek/filestore  > $BACKUPDIR/$FILE_BACKUP
+docker compose exec -T seek tar cfz - -C / seek/filestore  > $BACKUPDIR/$FILE_BACKUP
 find $BACKUPDIR -type f -name '*.sql.gz' -mtime +${DB_COPIES} -exec rm {} \;
 find $BACKUPDIR -type f -name '*.tar.gz' -mtime +${FILE_COPIES} -exec rm {} \;
 

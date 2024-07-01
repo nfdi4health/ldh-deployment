@@ -1,0 +1,15 @@
+en:
+  investigation: &investigation "Clinical Trial"
+  study: &study "Sub-Study"
+  assay: &assay "Resource"
+  project: &project "Trial Project"
+  institution: &institution "Institution"
+  programme: &programme "Sponsor"
+
+  asset_housekeeper: 'Asset housekeeper'
+  asset_gatekeeper: 'Asset gatekeeper'
+  project_administrator: 'Trial Project administrator'
+  pal: 'PI'
+  programme_administrator: 'Sponsor administrator'
+
+  isa:  "Trial Details"
