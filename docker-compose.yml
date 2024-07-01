@@ -10,7 +10,7 @@ services:
       - db:/var/lib/mysql
 
   seek:
-    image: ghcr.io/nfdi4health/ldh:latest
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE}
     command: docker/entrypoint.sh
     restart: unless-stopped
     environment:
@@ -34,7 +34,7 @@ services:
       - solr
 
   workers:
-    image: ghcr.io/nfdi4health/ldh:latest
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE}
     command: docker/start_workers.sh
     restart: unless-stopped
     environment:

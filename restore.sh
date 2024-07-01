@@ -18,7 +18,7 @@ DB_BACKUP=$1
 FILE_BACKUP=$2
 
 echo restore database
-gzip -cd ${DB_BACKUP}| docker-compose exec -T db mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
+gzip -cd ${DB_BACKUP}| docker compose exec -T db mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
 
 echo restore filestore
 docker compose cp ${FILE_BACKUP} seek:/seek/filestore.tar.gz
