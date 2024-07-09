@@ -26,7 +26,7 @@ services:
       - cache:/seek/tmp/cache
       - ${PWD}/${DHO_TERMS:-clinical-trials}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
     ports:
-      - 3000:${SEEK_PORT:-3000}
+      - ${SEEK_PORT:-3000}:3000
     depends_on:
       - db
       - solr
