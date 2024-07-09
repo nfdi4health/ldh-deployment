@@ -10,7 +10,7 @@ services:
       - db:/var/lib/mysql
 
   seek:
-    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE}
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE:-latest}
     command: docker/entrypoint.sh
     restart: unless-stopped
     environment:
@@ -24,9 +24,9 @@ services:
     volumes:
       - filestore:/seek/filestore
       - cache:/seek/tmp/cache
-      - ${PWD}/${DHO_TERMS}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
+      - ${PWD}/${DHO_TERMS:-clinical-trials}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
     ports:
-      - ${SEEK_PORT}:3000
+      - 3000:${SEEK_PORT:-3000}
     depends_on:
       - db
       - solr
@@ -35,7 +35,7 @@ services:
       - solr
 
   workers:
-    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE}
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE:-latest}
     command: docker/start_workers.sh
     restart: unless-stopped
     environment:

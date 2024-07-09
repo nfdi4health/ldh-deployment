@@ -35,10 +35,15 @@ cd ldh-deployment
 ```
 
 ## Configuration
-* Basic configuration is done in `.env`. You have to change nothing now. 
-    * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host
-    * SEEK_PORT is the port you will reach LDH on this host, standard would be localhost:3000
-    * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trrials.en.yml"
+* Basic configuration is done in `.env`. Copy .env.tpl to .env and change variables in .env as you like
+```bash
+cp .env.tpl .env.tpl
+
+```
+    * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host; e.g. N4H. Default is the name of th
+    * SEEK_PORT is the port you will reach LDH on this host. Default is 3000; e.g http://localhost:3000
+    * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trials.en.yml"
+    * LDH_RELEASE is the relase to load, e.g. v0.2.2. Default is latest.
 
 * Database configuration is specified in `docker-compose.env`. This is created by copying `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password-  either manually or using the openssl command, e.g.
 
