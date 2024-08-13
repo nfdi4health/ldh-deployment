@@ -37,7 +37,7 @@ cd ldh-deployment
 ## Configuration
 * Basic configuration is done in `.env`. Copy .env.tpl to .env and change variables in .env as you like
 ```bash
-cp .env.tpl .env.tpl
+cp .env.tpl .env
 
 ```
     * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host; e.g. N4H. Default is the name of th
