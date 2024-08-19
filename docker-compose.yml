@@ -24,6 +24,7 @@ services:
     volumes:
       - filestore:/seek/filestore
       - cache:/seek/tmp/cache
+      - ${PWD}/nginx.conf.template:/seek/docker/nginx.conf.template
       - ${PWD}/${DHO_TERMS:-clinical-trials}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
     ports:
       - ${SEEK_PORT:-3000}:3000
