@@ -12,15 +12,22 @@ in the [issue tracker][project-issues].
 
 ## Prerequisites
 
+### Hardware / Operating System / License Costs
+Hardware is not demanding; you may start with 16GB RAM, 100 GB Filespace; either a standalone PC/server  or preferably as part of a VM infrastructure.
+We recommend the use of root-less operated docker in a Linux host.
+
+FAIRDOM-SEEK/LDH and Docker-engine is free of charge.
+The use of "Docker Desktop" is relevant for Windows/MacOS hosts - no need for Linux.
+Even here: "Docker Desktop is free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects"
+
 ### Docker
 
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
 * `docker-compose` is deprecated; please ensure that you can use `docker compose` (compose beeing option for docker)
 * You need a compose version v2 - test with `docker compose version`
-* LDH works perfectly even with root-less docker; there is no need to have root right on the host
+* LDH works perfectly with root-less docker; there is no need to have root right on the host; we recommend this
 * Consider allowing your non-root Linux user to use docker by adding to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
-
 
 ## Download and Install
 
@@ -92,7 +99,7 @@ You may destroy all data, including passwords. The only thing you need is to kee
 To restore all, startup the LDH and type 
 
 ```
-bash restore.sh <your database.sql.gz from backup> <your filestore.tar.gz from backup>
+bash restore.sh <database.sql.gz_from_backup> <filestore.tar.gz_from_backup>
 ```
 
 ## Update image
@@ -111,6 +118,14 @@ docker volume rm ${COMPOSE_PROJECT_NAME}_filestore ${COMPOSE_PROJECT_NAME}_db
 rm docker-compose.env
 
 ```
+
+## Advance: Configure for https use
+We recommend the use of a reverse proxy to make the LDH publicly and securely visible via https. Here, a SSL certificate can be presented to the outside and the communication to the inside, to the LDH, can run via HTTP. Additional header parameters are required in SEEK inbuild nginx for communication:
+```
+proxy_set_header X-Forwarded-Proto https;
+proxy_set_header X-Forwarded-Ssl on;
+```
+"nginx.conf.template" contains these parameters and is mounted accordingly - overwriting the original configuration.
 
 ## Go further
 The above working setting can be altered in many ways:
