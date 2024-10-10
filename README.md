@@ -47,10 +47,11 @@ cd ldh-deployment
 cp .env.tpl .env
 
 ```
-    * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host; e.g. N4H. Default is the name of th
-    * SEEK_PORT is the port you will reach LDH on this host. Default is 3000; e.g http://localhost:3000
-    * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trials.en.yml"
-    * LDH_RELEASE is the relase to load, e.g. v0.2.2. Default is latest.
+    * COMPOSE_PROJECT_NAME is a prefix for all container names; useful if you have multiple instances of LDH on your host; e.g. N4H. Default is the name of the enclosing file directory.
+    * SEEK_PORT is the port you will reach LDH on this host. Default is "3000"; e.g http://localhost:3000
+    * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trials.en.yml". Default is "standard.en.yml".
+    * LDH_RELEASE is the relase to load, e.g. v0.2.2. Default is "latest".
+    * NGINX_CONF is overrinding the SEEK intername configuration for nginx; see below. Default is "nginx.conf.http".
 
 * Database configuration is specified in `docker-compose.env`. This is created by copying `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password-  either manually or using the openssl command, e.g.
 
@@ -120,12 +121,14 @@ rm docker-compose.env
 ```
 
 ## Advance: Configure for https use
-We recommend the use of a reverse proxy to make the LDH publicly and securely visible via https. Here, a SSL certificate can be presented to the outside and the communication to the inside, to the LDH, can run via HTTP. Additional header parameters are required in SEEK inbuild nginx for communication:
+We recommend the use of a reverse proxy to make the LDH publicly and securely visible via https. Here, a SSL certificate can be presented to the outside and the communication to the inside, to the LDH, can run via HTTP. 
+Additional header parameters are required in SEEK inbuild nginx for communication:
 ```
 proxy_set_header X-Forwarded-Proto https;
 proxy_set_header X-Forwarded-Ssl on;
 ```
-"nginx.conf.template" contains these parameters and is mounted accordingly - overwriting the original configuration.
+"nginx.conf.https" contains these parameters and overwrites the original configuration ("nginx.conf.http"), which is default here.
+
 
 ## Go further
 The above working setting can be altered in many ways:
