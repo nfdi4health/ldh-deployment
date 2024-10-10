@@ -1,0 +1,8 @@
+en:
+  investigation: &investigation "Investigation"
+  study: &study "Study"
+  assay: &assay "Assay"
+  project: &project "Project"
+  institution: &institution "Institution"
+  programme: &programme "Programme"
+
