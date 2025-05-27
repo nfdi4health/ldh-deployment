@@ -88,12 +88,11 @@ docker compose logs -f seek
 
 
 ## Backup & Restore
-There is a simple backup script `backup.sh` include which will dump your database and filestore to a backup directory. 
+There is a simple backup script `backup.sh` included, which will dump your database and filestore to a backup directory. 
 You can configure the number of copies to be held in backup.
 
 ```
 bash backup.sh
-
 ```
 
 You may destroy all data, including passwords. The only thing you need is to keep a valid copy of filestore and database.
@@ -103,10 +102,18 @@ To restore all, startup the LDH and type
 bash restore.sh <database.sql.gz_from_backup> <filestore.tar.gz_from_backup>
 ```
 
-## Update image
+## Update
 
-Follow "Upgrading between versions" in https://docs.seek4science.org/tech/docker/docker-compose.html
-But use LDH image name "ghcr.io/nfdi4health/ldh:latest" (or release like ghcr.io/nfdi4health/ldh:v0.2.1, see https://github.com/nfdi4health/ldh/releases) instead of "fairdom/seek:1.14".
+If you have the ```update.sh``` at hand:
+Change in ```.env``` the ```LDH_RELEASE``` to recent version (e.g. ```LDH_RELEASE=v0.3.0```) and execute
+
+```
+bash update.sh
+```
+
+Alternative: Follow "Upgrading between versions" in https://docs.seek4science.org/tech/docker/docker-compose.html
+But use LDH image name "ghcr.io/nfdi4health/ldh:latest" (or release like ghcr.io/nfdi4health/ldh:v0.3.0, see https://github.com/nfdi4health/ldh/releases) instead of "fairdom/seek:1.14".
+
 
 ## Destroy all
 
