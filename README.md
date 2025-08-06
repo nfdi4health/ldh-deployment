@@ -12,15 +12,13 @@ in the [issue tracker][project-issues].
 
 ## Prerequisites
 
-### Hardware / Operating System / License Costs
+### Hardware / Operating System / License Cost
 Hardware is not demanding; you may start with 16GB RAM, 100 GB Filespace; either a standalone PC/server  or preferably as part of a VM infrastructure.
-We recommend the use of root-less operated docker in a Linux host.
-
+Linux is recommended for the FAIRDOM-SEEK/LDH installation. 
 FAIRDOM-SEEK/LDH and Docker-engine is free of charge.
-The use of "Docker Desktop" is relevant for Windows/MacOS hosts - no need for Linux.
-Even here: "Docker Desktop is free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects"
 
 ### Docker
+Even though all components can be installed natively in both Windows and Linux, we recommend using the docker software container.
 
 * Docker must be installed on the system (Windows/Linux/MacOS). Please follow the [official installation instructions][docker-install]
 * `docker-compose` is deprecated; please ensure that you can use `docker compose` (compose beeing option for docker)
@@ -28,6 +26,13 @@ Even here: "Docker Desktop is free for small businesses (fewer than 250 employee
 * LDH works perfectly with root-less docker; there is no need to have root right on the host; we recommend this
 * Consider allowing your non-root Linux user to use docker by adding to the docker group
   (see [docker docs][docker-ugroup]) otherwise only a root user will be able to execute docker
+
+### Use with Windows
+For local use or testing, docker can be used with Windows/MacOS hosts. The following alternatives apply here:
+* Docker Desktop is free for small businesses, personal use, education and non-commercial open source projects.
+* Docker-CE (Community Edition) directly in WSL2 (Windos subsystem for Linux) is free (see https://medium.com/h7w/mastering-docker-on-wsl2-a-complete-guide-without-docker-desktop-19c4e945590b)
+
+Anyway - for permanent server operation, we recommend the use of docker with Linux as the host.
 
 ## Download and Install
 
