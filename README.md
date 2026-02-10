@@ -149,7 +149,7 @@ The above working setting can be altered in many ways:
 * like to use Container-Orchestration like Kubernetes?
 * want to expose your LDH to the internet - ask you local sysadmin!
 * Backup/Restore can be based on volumes too
-* see https://docs.docker.com/ from more
+* see https://docs.docker.com/ for more
 
 
 
