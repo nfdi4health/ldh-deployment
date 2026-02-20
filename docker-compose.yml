@@ -24,14 +24,11 @@ services:
     volumes:
       - filestore:/seek/filestore
       - cache:/seek/tmp/cache
-      - ${PWD}/${NGINX_CONF:-nginx.conf.http}:/seek/docker/nginx.conf.template
-      - ${PWD}/${DHO_TERMS:-standard}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
+      - ./${NGINX_CONF:-nginx.conf.http}:/seek/docker/nginx.conf.template
+      - ./${DHO_TERMS:-standard}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
     ports:
       - ${SEEK_PORT:-3000}:3000
     depends_on:
-      - db
-      - solr
-    links:
       - db
       - solr
 
@@ -50,9 +47,6 @@ services:
       - filestore:/seek/filestore
       - cache:/seek/tmp/cache
     depends_on:
-      - db
-      - solr
-    links:
       - db
       - solr
 
