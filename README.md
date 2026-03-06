@@ -141,6 +141,10 @@ proxy_set_header X-Forwarded-Ssl on;
 ```
 "nginx.conf.https" contains these parameters and overwrites the original configuration ("nginx.conf.http"), which is default here.
 
+## Embedd the Export-Converter for Health Study Hub
+If you are using this feature without the free online service provided by Leipzig University, you can integrate the “ldh-exporter” image locally.
+Please use docker-compose-exporter.yml instead of docker-compose.yml.
+Add a line "LDH_EXP_RELEASE=v2.9" (check version) to your .env file.
 
 ## Go further
 The above working setting can be altered in many ways:
