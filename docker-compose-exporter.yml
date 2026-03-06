@@ -1,0 +1,93 @@
+services:
+  db:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: unless-stopped 
+    stop_grace_period: 1m30s
+    env_file:
+      - docker-compose.env
+    volumes:
+      - db:/var/lib/mysql
+
+  seek:
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE:-latest}
+    command: docker/entrypoint.sh
+    restart: unless-stopped
+    environment:
+      RAILS_ENV: production
+      SOLR_PORT: 8983
+      SOLR_HOST: solr
+      NO_ENTRYPOINT_WORKERS: 1
+      RAILS_RELATIVE_URL_ROOT: "/"
+    env_file:
+      - docker-compose.env
+    volumes:
+      - filestore:/seek/filestore
+      - cache:/seek/tmp/cache
+      - ./${NGINX_CONF:-nginx.conf.http}:/seek/docker/nginx.conf.template
+      - ./${DHO_TERMS:-standard}.en.yml:/seek/config/locales/overrides/dho-terms.en.yml
+    ports:
+      - ${SEEK_PORT:-3000}:3000
+    depends_on:
+      - db
+      - solr
+
+  workers:
+    image: ghcr.io/nfdi4health/ldh:${LDH_RELEASE:-latest}
+    command: docker/start_workers.sh
+    restart: unless-stopped
+    environment:
+      RAILS_ENV: production
+      SOLR_PORT: 8983
+      SOLR_HOST: solr
+      RAILS_RELATIVE_URL_ROOT: "/"
+    env_file:
+      - docker-compose.env
+    volumes:
+      - filestore:/seek/filestore
+      - cache:/seek/tmp/cache
+    depends_on:
+      - db
+      - solr
+
+  solr:
+    image: fairdom/seek-solr:8.11
+    restart: unless-stopped
+    environment:
+      SOLR_JAVA_MEM: -Xms512m -Xmx1024m
+      GC_TUNE: "-XX:-UseLargePages"
+      LOG4J_FORMAT_MSG_NO_LOOKUPS: "true"
+    volumes:
+      - solr:/var/solr/
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - seek
+      - /opt/solr/server/solr/configsets/seek_config      
+
+  exporter:
+    image: fmeineke/ldh-exp:${LDH_EXP_RELEASE}
+    container_name: ldh-export
+    restart: unless-stopped
+    environment:
+      LDH_SOURCE: http://seek:3000
+      LDH_EXP: http://localhost:3001
+    # optional, no need to expose
+    # Set Enable or disable features/NFDI4Health URL Enable or disable features
+    #  / The URL transforming for the NFDI4Health publish rest service. to
+    # http://exporter:8083/export
+    #ports:
+    #  - "3001:8083"
+
+volumes:
+  filestore:
+    name: ${COMPOSE_PROJECT_NAME}_filestore
+    external: true
+  db:
+    name: ${COMPOSE_PROJECT_NAME}_db
+    external: true
+  solr:
+    external: false
+  cache:
+    external: false
+
