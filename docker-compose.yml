@@ -73,18 +73,18 @@ services:
 
 volumes:
   filestore:
-    name: digitaltwins-platform_seek_filestore
+    name: ${PROJECT_NAME}_seek_filestore
     external: false
     driver: local
   db:
-    name: digitaltwins-platform_seek_db
+    name: ${PROJECT_NAME}_seek_db
     external: false
     driver: local
   solr:
-    name: digitaltwins-platform_seek_solr
+    name: ${PROJECT_NAME}_seek_solr
     external: false
     driver: local
   cache:
-    name: digitaltwins-platform_seek_cache
+    name: ${PROJECT_NAME}_seek_cache
     external: false
     driver: local
