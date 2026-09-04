@@ -9,6 +9,7 @@ DHO_TERMS=standard
 # Might be changed to a fixed version in productive enviromnent, e.g
 # LDH_RELEASE=v0.2.3
 LDH_RELEASE=latest
+LDH_EXP_RELEASE=latest
 
 # Change to nginx.conf.https if called via https
 NGINX_CONF=nginx.conf.http
