@@ -56,6 +56,7 @@ cp .env.tpl .env
     * SEEK_PORT is the port you will reach LDH on this host. Default is "3000"; e.g http://localhost:3000
     * DHO_TERMS is the basename of an file overriding the standard term in the user interface - useful e.g. if you prefer "Sponsor" over "Programme" oder "Trial Project" instead of "Project" as in included "clinical-trials.en.yml". Default is "standard.en.yml".
     * LDH_RELEASE is the relase to load, e.g. v0.2.2. Default is "latest".
+    * LDH_EXP_RELEASE is the relase for CSH Exporter. Default is "latest". Only used in docker-compose-exporter.yml
     * NGINX_CONF is overrinding the SEEK intername configuration for nginx; see below. Default is "nginx.conf.http".
 
 * Database configuration is specified in `docker-compose.env`. This is created by copying `docker-compose.env.tpl` to `docker-compose.env` and replace `<some-password>` with a password-  either manually or using the openssl command, e.g.
@@ -83,6 +84,11 @@ docker volume create ${COMPOSE_PROJECT_NAME}_db
 docker compose up -d
 
 ```
+or if you want to host and use the exporter to Health Study Hub on premise
+```
+docker compose -f docker-compose-exporter.yml up -d
+``` 
+
 Wait a minute and direct browser to http://localhost:3000 to reach signup page.
 If you get a "502 Bad Gateway" wait a litte longer.
 You can watch the logs with
