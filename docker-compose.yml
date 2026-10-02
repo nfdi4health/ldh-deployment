@@ -1,9 +1,19 @@
 services:
   db:
-    image: mysql:8.0
+    image: mysql:8.4
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: unless-stopped 
     stop_grace_period: 1m30s
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -u $$MYSQL_USER -p$$MYSQL_PASSWORD --silent",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
     env_file:
       - docker-compose.env
     volumes:
@@ -17,8 +27,15 @@ services:
       RAILS_ENV: production
       SOLR_PORT: 8983
       SOLR_HOST: solr
+      RAILS_LOG_LEVEL: info # debug, info, warn, error or fatal
       NO_ENTRYPOINT_WORKERS: 1
       RAILS_RELATIVE_URL_ROOT: "/"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/up"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
     env_file:
       - docker-compose.env
     volumes:
@@ -51,7 +68,7 @@ services:
       - solr
 
   solr:
-    image: fairdom/seek-solr:8.11
+    image: fairdom/seek-solr:8.11.4
     restart: unless-stopped
     environment:
       SOLR_JAVA_MEM: -Xms512m -Xmx1024m
@@ -59,11 +76,29 @@ services:
       LOG4J_FORMAT_MSG_NO_LOOKUPS: "true"
     volumes:
       - solr:/var/solr/
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8983/solr/seek/admin/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
       - seek
       - /opt/solr/server/solr/configsets/seek_config      
+  exporter:
+    image: fmeineke/ldh-exp:${LDH_EXP_RELEASE}
+    restart: unless-stopped
+    environment:
+      LDH_SOURCE: http://seek:3000
+      LDH_EXP: http://localhost:3001
+    # optional, no need to expose
+    # Set Enable or disable features/NFDI4Health URL Enable or disable features
+    #  / The URL transforming for the NFDI4Health publish rest service. to
+    # http://exporter:8083/export
+    # ports:
+    #  - "3001:8083"
 
 volumes:
   filestore:
