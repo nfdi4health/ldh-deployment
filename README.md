@@ -2,6 +2,7 @@
 
 Deployment instructions and resources for an NFDI4Health Local Data Hub.
 
+This bases on the github projects [nfid4health/ldh](https://github.com/nfdi4health/ldh); an extension of [seek4science/seek](https://github.com/seek4science/seek).
 
 ## Disclaimer
 
